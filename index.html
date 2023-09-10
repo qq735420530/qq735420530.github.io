@@ -4,22 +4,10 @@
   }
 </style>
 <script>
-  function getQueryString(name) {
-    var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
-    var r = window.location.search.substr(1).match(reg);
-    if (r != null) {
-        return unescape(r[2]);
-    }
-    return null;
-  }
   var ua = navigator.userAgent;
   if(ua.match(/QQ\/[0-9]/i)){
     document.writeln("<div class='text'>点击右上角选择浏览器打开↗</div>");
   }else{
-    var str = getQueryString("r");
-    if str != null{
-      document.writeln("<a href='https://52moe.eu.org/" + str + "'>点我跳转</a>");
-      window.location.href="https://52moe.eu.org/" + str
-    }
+    window.location.href="https://52moe.eu.org/"
   }
 </script>
