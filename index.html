@@ -1,3 +1,17 @@
+<style>
+  .text {
+    width: 100%;
+  }
+</style>
 <script>
-  window.location.href="https://52moe.eu.org"
+  var ua = navigator.userAgent;
+  if(ua.match(/QQ\/[0-9]/i)){
+    document.writeln("<div class='text'>点击右上角选择浏览器打开↗</div>");
+  }else{
+    if (url.indexOf("?") != -1) {
+      var str = url.substr(1);
+      var strs = str.split("=")[1];
+      window.location.href="https://52moe.eu.org/" + strs
+    }
+  }
 </script>
