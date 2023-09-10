@@ -9,7 +9,12 @@
     document.writeln("<div class='text'>点击右上角选择浏览器打开↗</div>");
   }else{
     var url = window.location.search;
-    document.writeln(url)
+    if (url.indexOf("?r=") != -1){
+      var str = url.substr(1)
+      str = str.split("=")[1]
+      document.writeln(str)
+    }else{
+      document.writeln("参数错误")
     //window.location.href="https://52moe.eu.org/"
   }
 </script>
