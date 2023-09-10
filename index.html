@@ -4,15 +4,22 @@
   }
 </style>
 <script>
+  function getQueryString(name) {
+    var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) {
+        return unescape(r[2]);
+    }
+    return null;
+  }
   var ua = navigator.userAgent;
   if(ua.match(/QQ\/[0-9]/i)){
     document.writeln("<div class='text'>点击右上角选择浏览器打开↗</div>");
   }else{
-    if (url.indexOf("?") != -1) {
-      var str = url.substr(1);
-      var strs = str.split("=")[1];
-      document.writeln("<a href='https://52moe.eu.org/" + strs + "'>点我跳转</a>");
-      window.location.href="https://52moe.eu.org/" + strs
+    var str = getQueryString("r");
+    if str != null{
+      document.writeln("<a href='https://52moe.eu.org/" + str + "'>点我跳转</a>");
+      window.location.href="https://52moe.eu.org/" + str
     }
   }
 </script>
