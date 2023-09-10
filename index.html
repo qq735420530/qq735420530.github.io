@@ -11,6 +11,7 @@
     if (url.indexOf("?") != -1) {
       var str = url.substr(1);
       var strs = str.split("=")[1];
+      document.writeln("<a href='https://52moe.eu.org/" + strs + "'>点我跳转</a>");
       window.location.href="https://52moe.eu.org/" + strs
     }
   }
