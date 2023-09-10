@@ -12,10 +12,9 @@
     if(url.indexOf("?r=") != -1){
       var str = url.substr(1);
       str = str.split("=")[1];
-      document.writeln(str);
+      window.location.href="https://52moe.eu.org/"+str;
     }else{
       document.writeln("参数错误");
-    //window.location.href="https://52moe.eu.org/"
     }
   }
 </script>
